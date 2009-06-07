@@ -1,12 +1,12 @@
 = 簡介
-這是一個簡單的繁體中文(zh-TW)網上應用程式，唯一的功能就給訪客發出電子郵件。他只有一個【Model】、【View】、【Controller】和【Mailer】。
+這是一個簡單的繁體中文(zh-TW)網上應用程式，唯一的功能就是給訪客發出電子郵件。他只有一個【Model】、【View】、【Controller】和【Mailer】。
 
-目的在示範繁體中文程式都可以執行多種測試方法
+目的是示範繁體中文程式也可以執行多種測試方法;
 * Rspec
 * Cucumber
-* Cucumber 加 Firewatir
-* Cucumber 加 Selenium
-* Selenium on Rails (似乎並不完全支援繁體中文)
+* Cucumber 加 Firewatir (執行測試時，速度明顯慢)
+* Cucumber 加 Selenium (似乎並不完全支援繁體中文)
+* Selenium on Rails
 
 程式是在 Ubuntu 8.0.4 編寫及測試
 

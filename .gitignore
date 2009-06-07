@@ -5,4 +5,4 @@ db/schema.rb
 doc/*
 log/*.log
 tmp/**/*
-
+vender/plugins/selenium-on-rails/log/*

@@ -13,7 +13,6 @@
     And I fill in "Message" with "好久不見，你近況如何?"
     And I press "Send email"
     Then I should see "Email sent"
-    And I should be on home_page
 
   Scenario Outline: Unable to send email because of invalid information
     Given I am on start_page
