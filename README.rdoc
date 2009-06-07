@@ -22,6 +22,9 @@
 
 安裝 Selenium[http://wiki.github.com/aslakhellesoy/cucumber/setting-up-selenium]
 
+
+== 執行測試
+
 === Rspec
 
     rake spec
