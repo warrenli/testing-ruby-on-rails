@@ -1,0 +1,23 @@
+# It's often a good idea to start the test with 'setup'.
+# See /selenium/setup for more info.
+
+#setup
+
+open '/'
+verify_text_present "聯絡表單"
+type "contactForm_sender_name", "陳大文"
+type "contactForm_sender_email", "abc@example"
+type "contactForm_recipient_name", "李小強"
+type "contactForm_recipient_email", "peter@example.com"
+type "contactForm_subject", "你好嗎"
+type "contactForm_message", "好久不見，你近況如何?"
+click_and_wait "contactForm_submit"
+verify_text_present "未能發出電子郵件"
+
+# More information about the commands is available at:
+#   http://release.openqa.org/selenium-core/nightly/reference.html
+# See also the RDoc for SeleniumOnRails::TestBuilder.
+#
+# Point the browser to http://localhost:3000/selenium/tests/02_send_email_not_ok.rsel to see
+# how this test is rendered, or to http://localhost:3000/selenium to
+# run the suite.

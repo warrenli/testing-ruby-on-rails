@@ -1,0 +1,46 @@
+= 簡介
+這是一個簡單的繁體中文(zh-TW)網上應用程式，唯一的功能就給訪客發出電子郵件。他只有一個【Model】、【View】、【Controller】和【Mailer】。
+
+目的在示範繁體中文程式都可以執行多種測試方法
+* Rspec
+* Cucumber
+* Cucumber 加 Firewatir
+* Cucumber 加 Selenium
+* Selenium on Rails (似乎並不完全支援繁體中文)
+
+程式是在 Ubuntu 8.0.4 編寫及測試
+
+== 設定
+修改 config/initializers/mail.rb 中的Gmail帳戶名稱及密碼
+
+安裝插件 Cucumber, Email-spec, Rspec, Selenium-client, Webrat
+    sudo rake gems:install RAILS_ENV=test
+
+安裝 Firewatir[http://wiki.github.com/aslakhellesoy/cucumber/setting-up-firewatir]
+
+安裝 SeleniumIDE[http://seleniumhq.org/projects/ide/]
+
+安裝 Selenium[http://wiki.github.com/aslakhellesoy/cucumber/setting-up-selenium]
+
+=== Rspec
+
+    rake spec
+
+=== 黃瓜【Cucumber】
+
+    cucumber features/send_email.feature -n -l zh-TW
+
+=== 黃瓜【Cucumber】 加 Firewatir
+
+    cucumber features2/send_email.feature -n -l zh-TW
+
+=== 黃瓜【Cucumber】 加 Selenium
+
+    cucumber features3/send_email.feature -n
+
+=== Selenium on Rails
+
+    script/server -e test
+
+    rake test:acceptance
+

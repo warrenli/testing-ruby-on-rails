@@ -1,0 +1,11 @@
+zh-HK:
+  #
+  # Controller:
+  #   Action/View:
+  #     text:
+  #
+  contact_form:
+    index:
+      send_button: "發出電子郵件"
+      success_msg: "電子郵件經已發出"
+      failed_msg: "未能發出電子郵件"

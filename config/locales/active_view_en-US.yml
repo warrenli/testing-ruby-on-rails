@@ -1,0 +1,11 @@
+en-US:
+  #
+  # Controller:
+  #   Action/View:
+  #     text:
+  #
+  contact_form:
+    index:
+      send_button: "Send email"
+      success_msg: "Email sent"
+      failed_msg: "Not able to send email"
