@@ -2,6 +2,7 @@
 .DS_Store
 config/database.yml
 db/schema.rb
+db/*sqlite3
 doc/*
 log/*.log
 tmp/**/*

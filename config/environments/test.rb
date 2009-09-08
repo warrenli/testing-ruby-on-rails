@@ -27,9 +27,9 @@ config.action_mailer.delivery_method = :test
 # like if you have constraints or database-specific column types
 # config.active_record.schema_format = :sql
 
-config.gem "rspec", :lib => false, :version => ">=1.2.6"
-config.gem "rspec-rails", :lib => false, :version => ">=1.2.6"
-config.gem "webrat", :lib => false, :version => ">=0.4.4"
-config.gem "cucumber", :lib => false, :version => ">=0.3.2"
+config.gem "rspec", :lib => false, :version => ">=1.2.8"
+config.gem "rspec-rails", :lib => false, :version => ">=1.2.7.1"
+config.gem "webrat", :lib => false, :version => ">=0.5.3"
+config.gem "cucumber", :lib => false, :version => ">=0.3.99"
 config.gem 'bmabey-email_spec', :lib => 'email_spec'
-config.gem "selenium-client", :version => '1.2.15', :lib => 'selenium/client'
+config.gem "selenium-client", :version => '1.2.16', :lib => 'selenium/client'

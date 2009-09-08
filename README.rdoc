@@ -8,7 +8,7 @@
 * Cucumber 加 Selenium (似乎並不完全支援繁體中文)
 * Selenium on Rails
 
-程式是在 Ubuntu 8.0.4 編寫及測試
+程式是在 Ubuntu 8.10 編寫及測試
 
 == 設定
 修改 config/initializers/mail.rb 中的Gmail帳戶名稱及密碼
@@ -31,15 +31,15 @@
 
 === 黃瓜【Cucumber】
 
-    cucumber features/send_email.feature -n -l zh-TW
+    cucumber features/send_email.feature -l zh-TW
 
 === 黃瓜【Cucumber】 加 Firewatir
 
-    cucumber features2/send_email.feature -n -l zh-TW
+    cucumber features2/send_email.feature -l zh-TW
 
 === 黃瓜【Cucumber】 加 Selenium
 
-    cucumber features3/send_email.feature -n
+    cucumber features3/send_email.feature
 
 === Selenium on Rails
 
