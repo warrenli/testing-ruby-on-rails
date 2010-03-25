@@ -5,10 +5,10 @@
 * Rspec
 * Cucumber
 * Cucumber 加 Firewatir (執行測試時，速度明顯慢)
-* Cucumber 加 Selenium (似乎並不完全支援繁體中文)
+* Cucumber 加 Selenium
 * Selenium on Rails
 
-程式是在 Ubuntu 8.10 編寫及測試
+程式是在 Ubuntu 9.0.4 (Jaunty) 編寫、使用Firefox 3.0.18 測試
 
 == 設定
 修改 config/initializers/mail.rb 中的Gmail帳戶名稱及密碼
@@ -31,11 +31,11 @@
 
 === 黃瓜【Cucumber】
 
-    cucumber features/send_email.feature -l zh-TW
+    cucumber features/send_email.feature
 
 === 黃瓜【Cucumber】 加 Firewatir
 
-    cucumber features2/send_email.feature -l zh-TW
+    cucumber features2/send_email.feature
 
 === 黃瓜【Cucumber】 加 Selenium
 

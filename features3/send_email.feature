@@ -1,48 +1,40 @@
+# language: zh-TW
+
 功能: 用戶可以發出電子郵件給朋友
   為了聯絡好友
   作為一名訪客
   我要發出電子郵件給朋友
 
-  Scenario: Send email to friend after entering valid information
-    Given I am on start_page
-    When I fill in "Sender name" with "陳大文"
-    And I fill in "Sender email" with "taiming@example.com"
-    And I fill in "Recipient name" with "李小強"
-    And I fill in "Recipient email" with "peter@example.com"
-    And I fill in "Subject" with "你好嗎"
-    And I fill in "Message" with "好久不見，你近況如何?"
-    And I press "Send email"
-    Then I should see "Email sent"
+  場景: 用戶輸入了完整的資料，便可發出電子郵件給朋友
+    假設 我來到首頁
+    當 我在"發件人姓名"欄位中輸入"陳大文"
+    而且 在"發件人電郵地址"欄位中輸入"taiming@example.com"
+    而且 在"收件人姓名"欄位中輸入"李小強"
+    而且 在"收件人電郵地址"欄位中輸入"peter@example.com"
+    而且 在"標題"欄位中輸入"你好嗎"
+    而且 在"內容"欄位中輸入"好久不見，你近況如何?"
+    而且 按下了"發出電子郵件"按钮
+    那麼 我停留在首頁
+    而且 我應該看到"電子郵件經已發出"的提示信息
 
-  Scenario: Send email to friend after entering valid information
-    Given I am on start_page
-    When I fill in "Sender name" with "陳大文"
-    And I fill in "Sender email" with "taiming@example.com"
-    And I fill in "Recipient name" with "李小強"
-    And I fill in "Recipient email" with "peter@example.com"
-    And I fill in "Subject" with "你好嗎"
-    And I fill in "Message" with "好久不見，你近況如何?"
-    And I press "Send email"
-    Then I should see "Email sent"
+  場景大綱: 用戶輸入了資料，如果資料是完整，系統會發出電子郵件，否則是系統並不會發出電子郵件
+    假設 我來到首頁
+    當 我在"發件人姓名"欄位中輸入"<用戶姓名>"
+    當 在"發件人電郵地址"欄位中輸入"<用戶電郵地址>"
+    而且 在"收件人姓名"欄位中輸入"<朋友姓名>"
+    而且 在"收件人電郵地址"欄位中輸入"<朋友電郵地址>"
+    而且 在"標題"欄位中輸入"<標題>"
+    而且 在"內容"欄位中輸入"<內容>"
+    而且 按下了"發出電子郵件"按钮
+    那麼 我停留在首頁
+    而且 我應該看到"<結果>"的提示信息
 
-  Scenario Outline: Send email if information valid
-    Given I am on start_page
-    When I fill in "Sender name" with "<senderName>"
-    And I fill in "Sender email" with "<senderEmail>"
-    And I fill in "Recipient name" with "<recipientName>"
-    And I fill in "Recipient email" with "<recipientEmail>"
-    And I fill in "Subject" with "<subject>"
-    And I fill in "Message" with "<body>"
-    And I press "Send email"
-    Then I should see "<text>"
-
-  Examples:
-    | senderName | senderEmail | recipientName | recipientEmail | subject | body | text |
-    | 陳大文  | taiming@example.com | 李小強 | peter@example.com | 你好嗎 | 你近況如何? | Email sent |
-    |  | taiming@example.com | 李小強 | peter@example.com | 你好嗎 | 你近況如何? | Not able to send email |
-    | 陳大文  | taiming@example | 李小強 | peter@example.com | 你好嗎 | 你近況如何? | Not able to send email |
-    | 陳大文  | taiming@example.com |  | peter@example.com | 你好嗎 | 你近況如何? | Not able to send email |
-    | 陳大文  | taiming@example.com | 李小強 | peter@example | 你好嗎 | 你近況如何? | Not able to send email |
-    | 陳大文  | taiming@example.com | 李小強 | peter@example.com |  | 你近況如何? | Not able to send email |
-    | 陳大文  | taiming@example.com | 李小強 | peter@example.com | 你好嗎 |  | Not able to send email |
-
+  例子:
+    | 用戶姓名  |     用戶電郵地址     | 朋友姓名  |     朋友電郵地址     |  標題  | 內容 | 結果 |
+    | 陳大文    | abc@example.com | 李小強    | peter@example.com | 你好嗎 | 好久不見，你近況如何? | 電子郵件經已發出 |
+    | 陳大文    | abc@example | 李小強    | peter@example.com | 你好嗎 | 好久不見，你近況如何? | 未能發出電子郵件 |
+    |        | abc@example.com | 李小強    | peter@example.com | 你好嗎 | 好久不見，你近況如何? | 未能發出電子郵件 |
+    | 陳大文    | abc@example.com |   | peter@example.com | 你好嗎 | 好久不見，你近況如何? | 未能發出電子郵件 |
+    | 陳大文    | abc@example.com | 李小強    | peter@example | 你好嗎 | 好久不見，你近況如何? | 未能發出電子郵件 |
+    | 陳大文    | abc@example.com | 李小強    | peter@example.com |   | 好久不見，你近況如何? | 未能發出電子郵件 |
+    | 陳大文    | abc@example.com | 李小強    | peter@example.com | 你好嗎 |   | 未能發出電子郵件 |

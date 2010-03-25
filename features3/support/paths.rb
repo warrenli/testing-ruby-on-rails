@@ -8,10 +8,8 @@ module NavigationHelpers
   def path_to(page_name)
     case page_name
     
-    when /home_page/
+    when /首頁/
       root_path
-    when /start_page/
-      '/?locale=en-US'
     #
     # Add more mappings here.
     # Here is a more fancy example:
