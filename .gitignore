@@ -4,4 +4,5 @@ db/*sqlite3
 doc/*
 log/*.log
 tmp/**/*
-vender/plugins/selenium-on-rails/log/*
+vendor/plugins/selenium-on-rails/log/*
+

@@ -8,12 +8,12 @@
 * Cucumber 加 Selenium
 * Selenium on Rails
 
-程式是在 Ubuntu 9.0.4 (Jaunty), Ruby 1.8.7 & Rails 2.3.4 編寫、使用Firefox 3.0.18 測試
+程式是在 Ubuntu 9.10 (Karmic Koala), Ruby 1.8.7-p299 & Rails 2.3.8 編寫、使用Firefox 3.5.10 測試
 
 == 設定
 修改 config/initializers/mail.rb 中的Gmail帳戶名稱及密碼
 
-安裝插件 Cucumber, Email-spec, Rspec, Selenium-client, Webrat
+安裝插件 Cucumber, Email-spec, Rspec, Selenium-client, Webrat, Capybara
     sudo rake gems:install RAILS_ENV=test
 
 安裝 Firewatir[http://wiki.github.com/aslakhellesoy/cucumber/setting-up-firewatir]
@@ -29,7 +29,7 @@
 
     rake spec
 
-=== 黃瓜【Cucumber】
+=== 黃瓜【Cucumber】加 Webrat
 
     cucumber features/send_email.feature
 
@@ -37,9 +37,17 @@
 
     cucumber features2/send_email.feature
 
-=== 黃瓜【Cucumber】 加 Selenium
+=== 黃瓜【Cucumber】 加 Webrat 加 Selenium
 
     cucumber features3/send_email.feature
+
+=== 黃瓜【Cucumber】加 Capybara
+
+    cucumber features4/send_email.feature
+
+=== 黃瓜【Cucumber】加 Capybara 加 selenium-webdriver
+
+    cucumber features5/send_email.feature
 
 === Selenium on Rails
 

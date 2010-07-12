@@ -1,6 +1,6 @@
-system 'firefox -jssh &'
-system 'ruby script/server -p 3001 -e test -d &'
-
+#system 'firefox -jssh &'
+system 'ruby script/server -p 3001 -e test -d'
+system 'sleep 2'
 at_exit do
   system "kill `ps aux | grep -e '-p 3001' | grep -v grep | awk '{ print $2 }'`"
 end
@@ -43,3 +43,8 @@ end
 那麼 /^用戶應該看到"([^\"]*)"的提示信息$/ do |text|
   browser.text.should include(text)
 end
+
+at_exit do
+  browser.close
+end
+

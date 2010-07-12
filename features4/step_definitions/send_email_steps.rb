@@ -15,10 +15,14 @@ end
 end
 
 那麼 /^我應該看到"([^\"]*)"的提示信息$/ do |text|
-  response.should contain(text)
+  if page.respond_to? :should
+    page.should have_content(text)
+  else
+    assert page.has_content?(text)
+  end
 end
 
-那麼 %r{^"([^"]*?)" 應該收到 (\d+) 封電子郵件$} do |address, amount|
+那麼 /^"([^"]*)" 應該收到 (\d+) 封電子郵件$/ do |address, amount|
   unread_emails_for(address).size.should == parse_email_count(amount)
 end
 

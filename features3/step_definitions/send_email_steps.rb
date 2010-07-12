@@ -1,5 +1,3 @@
-require File.expand_path(File.join(File.dirname(__FILE__), "..", "support", "paths"))
-
 假設 /^我來到(.+)$/ do |page_name|
   visit path_to(page_name)
 end
@@ -20,8 +18,8 @@ end
   response.should contain(text)
 end
 
-那麼 %r{^"([^"]*?)" 應該收到 (\d+) 封電子郵件$} do |address, n|
-  mailbox_for(address).size.should == n.to_i
+那麼 %r{^"([^"]*?)" 應該收到 (\d+) 封電子郵件$} do |address, amount|
+  unread_emails_for(address).size.should == parse_email_count(amount)
 end
 
 當 %r{^"([^"]*?)" 閱讀標題為 "([^"]*?)" 的電子郵件$} do |address, subject|
@@ -31,3 +29,4 @@ end
 那麼 %r{^在電子郵件裡中應該寫着 "([^"]*?)"$} do |text|
   current_email.body.should =~ Regexp.new(text)
 end
+
